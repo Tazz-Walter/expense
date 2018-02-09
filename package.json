@@ -7,7 +7,10 @@
     "test": "jest --config=jest.config.json --watch",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server"
+    "prod": "NODE_ENV=production",
+    "heroku-postbuild": "npm run build:prod",
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js"
   },
   "author": "Wally <wolaondo@gmail.com>",
   "license": "ISC",
@@ -22,6 +25,7 @@
     "css-loader": "^0.28.8",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "jest": "^22.2.1",
     "moment": "^2.20.1",
