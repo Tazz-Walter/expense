@@ -18,7 +18,7 @@ module.exports = (env) => {
                 exclude: /node_modules/
             }, {
                 test: /\.s?css$/,
-                use:CSSExtract.extract({
+                use: CSSExtract.extract({
                     use: [{
                         loader: 'css-loader',
                         options: {
@@ -30,7 +30,8 @@ module.exports = (env) => {
                             options: {
                                 sourceMap: true
                             }
-                        }]
+                        }
+                    ]
                 })
             }]
         },
@@ -42,6 +43,5 @@ module.exports = (env) => {
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
         }
-    }
-
+    };
 };
