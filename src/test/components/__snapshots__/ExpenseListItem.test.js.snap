@@ -34,10 +34,10 @@ ShallowWrapper {
           </Link>
         </h3>,
         <p>
-          Monto: 
-          195
-           - Creado: 
-          0
+          Monto:  
+          $1.95
+          - Creado: 
+          31st December, 1969
         </p>,
       ],
     },
@@ -83,18 +83,18 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            "Monto: ",
-            195,
-            " - Creado: ",
-            0,
+            "Monto:  ",
+            "$1.95",
+            "- Creado: ",
+            "31st December, 1969",
           ],
         },
         "ref": null,
         "rendered": Array [
-          "Monto: ",
-          195,
-          " - Creado: ",
-          0,
+          "Monto:  ",
+          "$1.95",
+          "- Creado: ",
+          "31st December, 1969",
         ],
         "type": "p",
       },
@@ -118,10 +118,10 @@ ShallowWrapper {
             </Link>
           </h3>,
           <p>
-            Monto: 
-            195
-             - Creado: 
-            0
+            Monto:  
+            $1.95
+            - Creado: 
+            31st December, 1969
           </p>,
         ],
       },
@@ -167,18 +167,18 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Monto: ",
-              195,
-              " - Creado: ",
-              0,
+              "Monto:  ",
+              "$1.95",
+              "- Creado: ",
+              "31st December, 1969",
             ],
           },
           "ref": null,
           "rendered": Array [
-            "Monto: ",
-            195,
-            " - Creado: ",
-            0,
+            "Monto:  ",
+            "$1.95",
+            "- Creado: ",
+            "31st December, 1969",
           ],
           "type": "p",
         },
