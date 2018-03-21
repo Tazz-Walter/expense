@@ -10,21 +10,5 @@ const config = {
   firebase.initializeApp(config);
 
   const database = firebase.database();
-/* 
-  database.ref().set({
-    name: 'walter',
-    age: 31,
-    isSingle: true,
-    location: {
-        city: 'Corrientes',
-        country: 'Argentina'
-    }
-  }).then(() => {
-      console.log('data has been saved!!');
-  }).catch((error) => {
-        console.log('Failed to save to firebase', error);
-  });
- */
 
- 
-  console.log('I made a request to changed data on firebase');
+  export { firebase, database as default };
