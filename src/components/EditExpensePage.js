@@ -1,28 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import { removeExpense, editExpense } from '../actions/expenses';
+import { startRemoveExpense, startEditExpense } from '../actions/expenses';
 
-const EditExpensePage = (props) => {    
-    return (
+export class EditExpensePage extends React.Component {
+    onSubmit = (expense) => {
+      this.props.startEditExpense(this.props.expense.id, expense);
+      this.props.history.push('/');
+    };
+    onRemove = () => {
+      this.props.startRemoveExpense({ id: this.props.expense.id });
+      this.props.history.push('/');
+    };
+    render() {
+      return (
         <div>
-        <h2></h2>
-            <ExpenseForm
-            //defino una nueva propiedad expense para pasarle info al componente hijo
-                expense={props.expense} 
-                onSubmit={(expense) => {            
-                    props.dispatch(editExpense(props.expense.id, expense));
-                    props.history.push('/');                    
-                }}
-            />
-            <button onClick={() => { 
-                props.dispatch(removeExpense({id: props.expense.id}));
-                props.history.push('/');
-            }}>
-            Remove</button>
+          <ExpenseForm
+            expense={this.props.expense}
+            onSubmit={this.onSubmit}
+          />
+          <button onClick={this.onRemove}>Remove</button>
         </div>
-    );
-};
+      );
+    }
+  };
 //estamos conectando component state con redux Store. atraves de props obtengo el id 
 //en state tenemos un array de expenses donde podemos buscar el id q matchee para obtener sus propiedades
 const mapStateToProps = (state, props) => {
@@ -31,4 +32,10 @@ const mapStateToProps = (state, props) => {
     };
 }
 
-export default connect(mapStateToProps)(EditExpensePage);
+const mapDispatchToProps = (dispatch, props) => ({
+    startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
+    startRemoveExpense: (data) => dispatch(startRemoveExpense(data))
+  });
+
+//conectamos mapState con mapDispatch que contiene props y despacha acciones
+export default connect(mapStateToProps, mapDispatchToProps)(EditExpensePage);
